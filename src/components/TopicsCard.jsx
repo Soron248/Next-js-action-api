@@ -18,11 +18,11 @@ const getAllTopics = async () => {
 };
 
 const TopicsCard = async () => {
-  const allTopicsData = await getAllTopics();
+  const { topics } = await getAllTopics();
   return (
     <>
-      {allTopicsData.topics &&
-        allTopicsData.topics.reverse().map((t) => (
+      {topics &&
+        topics.reverse().map((t) => (
           <div
             className="max-w-5xl mx-auto shadow-md p-5 rounded-md flex mb-5"
             key={t._id}
