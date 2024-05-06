@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 
 const getTopic = async (id) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
-      next: { revalidate: 3000 },
+    const res = await fetch(`/api/topics/${id}`, {
+      cache: "no-store",
     });
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -26,7 +26,7 @@ const Remove = ({ id }) => {
     const confirmed = confirm(`Are you sure to delete ${topic.title}`);
 
     if (confirmed) {
-      const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {
+      const res = await fetch(`/api/topics?id=${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
