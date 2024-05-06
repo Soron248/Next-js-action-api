@@ -6,7 +6,7 @@ import Remove from "./Remove";
 const getAllTopics = async () => {
   try {
     const res = await fetch(`${process.env.NEXTAUTH_URL}/api/topics`, {
-      cache: "no-store",
+      cache: "no-cache",
     });
     if (!res.ok) {
       throw new Error("Failed to fetch data");

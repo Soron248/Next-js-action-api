@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 const getTopic = async (id) => {
   try {
     const res = await fetch(`/api/topics/${id}`, {
-      cache: "no-store",
+      cache: "no-cache",
     });
     if (!res.ok) {
       throw new Error("Failed to fetch data");
