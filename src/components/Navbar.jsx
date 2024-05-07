@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="bg-teal-800 max-w-5xl text-white mx-auto h-16 my-10 flex rounded-md justify-between items-center px-10">
       <Link href={"/"} className="text-3xl font-bold">
-        CRUD
+        CRUD ACTION
       </Link>
       <Link
         href={"/add_topic"}
